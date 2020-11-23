@@ -44,7 +44,11 @@ public struct UserDefault<T> where T: UserDefaultElement {
         set {
             do {
                 let object = try newValue.write()
-                UserDefaults.standard.set(object, forKey: key)
+                if isNull(object) {
+                    UserDefaults.standard.removeObject(forKey: key)
+                } else {
+                    UserDefaults.standard.set(object, forKey: key)
+                }
             } catch {
                 // Error silenced to keep `wrappedValue` a get/set
                 debugPrint(error)
