@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		B8540EC625ADCC8E0004BA32 /* NotificationCenter+UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8540EC525ADCC8E0004BA32 /* NotificationCenter+UserDefault.swift */; };
 		B860C8C8256C30350015D59F /* Object+Null.swift in Sources */ = {isa = PBXBuildFile; fileRef = B860C8C7256C30350015D59F /* Object+Null.swift */; };
 		OBJ_32 /* CastError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* CastError.swift */; };
 		OBJ_33 /* RawRepresentableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* RawRepresentableError.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8540EC525ADCC8E0004BA32 /* NotificationCenter+UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+UserDefault.swift"; sourceTree = "<group>"; };
 		B860C8C7256C30350015D59F /* Object+Null.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Object+Null.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* RawRepresentableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawRepresentableError.swift; sourceTree = "<group>"; };
 		OBJ_11 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				OBJ_12 /* UserDefaultElement */,
 				OBJ_11 /* UserDefault.swift */,
 				B860C8C7256C30350015D59F /* Object+Null.swift */,
+				B8540EC525ADCC8E0004BA32 /* NotificationCenter+UserDefault.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -252,6 +255,7 @@
 				OBJ_35 /* Optional+UserDefaultElement.swift in Sources */,
 				OBJ_36 /* SupportedUserDefaultElement.swift in Sources */,
 				OBJ_37 /* UserDefaultElement+Codable.swift in Sources */,
+				B8540EC625ADCC8E0004BA32 /* NotificationCenter+UserDefault.swift in Sources */,
 				OBJ_38 /* UserDefaultElement+RawRepresentable.swift in Sources */,
 				B860C8C8256C30350015D59F /* Object+Null.swift in Sources */,
 				OBJ_39 /* UserDefaultElement.swift in Sources */,

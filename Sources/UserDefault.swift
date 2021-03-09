@@ -12,7 +12,7 @@ import Foundation
 @propertyWrapper
 public struct UserDefault<T> where T: UserDefaultElement {
 
-    /// `String` key to save valye `T` against in the `UserDefaults`
+    /// `String` key to save value `T` against in the `UserDefaults`
     public let key: String
 
     /// Default value of `T` when no entity exits or can not be cast to `T`
@@ -49,6 +49,10 @@ public struct UserDefault<T> where T: UserDefaultElement {
                 } else {
                     UserDefaults.standard.set(object, forKey: key)
                 }
+
+                // Post on the `NotificationCenter`
+                NotificationCenter.default.post(userDefault: self, object: self)
+
             } catch {
                 // Error silenced to keep `wrappedValue` a get/set
                 debugPrint(error)
