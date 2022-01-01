@@ -1,15 +1,16 @@
 # UserDefault
- Simple property wrapper of the `UserDefaults`.
+Simple property wrapper of the [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults).
 
 ## Example
 Using the `UserDefault` `@propertyWrapper` allows you to cleanly keep your `UserDefaults` logic all in one place. 
-What you can persist is not limited to the supported types outlined in the [User Defaults](https://developer.apple.com/documentation/foundation/userdefaults).
+What you can persist is not limited to the supported types outlined in the [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults).
 `Codable` conformance is provided. For example:
 
 ```swift
 struct User: Codable: UserDefaultsElement { 
     // ... 
 }
+
 struct Animal: Codable: UserDefaultsElement { 
     // ... 
 }
@@ -28,6 +29,7 @@ struct UserDefaultValues {
 
     @UserDefault("isLoggedIn", defaultValue: false)
     static var isLoggedIn: Bool
+}
 ``` 
 
 ## Acknowledgements
