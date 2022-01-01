@@ -7,26 +7,38 @@ What you can persist is not limited to the supported types outlined in the [User
 `Codable` conformance is provided. For example:
 
 ```swift
-struct User: Codable: UserDefaultsElement { 
-    // ... 
+/// A user model
+struct User: Codable: UserDefaultsElement {
+    // ...
 }
 
-struct Animal: Codable: UserDefaultsElement { 
-    // ... 
+/// An animal model
+struct Animal: Codable: UserDefaultsElement {
+
+    /// Default `Animal` to return from the `UserDefaults`
+    static var `default`: Animal {
+        // ...
+    }
+
+    // ...
 }
 
 /// Set of entities stored in the `UserDefaults`
 struct UserDefaultValues {
 
+    /// Example of optional `Codable`
     @UserDefault("user", defaultValue: nil)
     static var user: User?
 
+    /// Example of non-optional `Codable`
     @UserDefault("animal", defaultValue: .default)
     static var animal: Animal
 
+    /// Example of `Int`
     @UserDefault("age", defaultValue: 18)
     static var age: Int
 
+    /// Example of `Bool`
     @UserDefault("isLoggedIn", defaultValue: false)
     static var isLoggedIn: Bool
 }
