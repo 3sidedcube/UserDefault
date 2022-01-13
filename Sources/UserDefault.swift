@@ -37,7 +37,7 @@ public struct UserDefault<T> where T: UserDefaultElement {
                 return try T.read(object: obj)
             } catch {
                 // Error silenced to keep `wrappedValue` a get/set
-                debugPrint(error)
+                Logger.log(error)
                 return defaultValue
             }
         }
@@ -55,7 +55,7 @@ public struct UserDefault<T> where T: UserDefaultElement {
 
             } catch {
                 // Error silenced to keep `wrappedValue` a get/set
-                debugPrint(error)
+                Logger.log(error)
             }
         }
     }
