@@ -56,6 +56,7 @@ public extension UserDefaultElement
 /// Extension required to handle an entity which conforms to both:
 /// - `RawRepresentable`
 /// - `Codable`
+///
 /// Otherwise conforming to `UserDefaultElement` raises an error as Swift doesn't know which
 /// implementation to use.
 public extension UserDefaultElement
