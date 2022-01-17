@@ -9,14 +9,16 @@
 import Foundation
 
 /// Define `UserDefaultElement` implementation when `Self` is `RawRepresentable`
-public extension UserDefaultElement where
-    Self: RawRepresentable,
-    RawValue: SupportedUserDefaultElement {
+public extension UserDefaultElement
+    where Self: RawRepresentable, RawValue: SupportedUserDefaultElement {
+
+    // MARK: - RawRepresentable
 
     /// Cast `object` as `RawValue` and initialize with that `RawValue`
     ///
     /// - Parameter object: `Any` object returned from the `UserDefaults`
-    static func read(object: Any) throws -> Self {
+    /// - Returns: `Self`
+    static func readRawRepresentable(object: Any) throws -> Self {
         // Cast to `RawValue`
         let rawValue: RawValue = try castOrThrow(object)
 
@@ -27,7 +29,50 @@ public extension UserDefaultElement where
     }
 
     /// Write `rawValue`
-    func write() throws -> Any {
+    /// - Returns: `Any`
+    func writeRawRepresentable() throws -> Any {
         return rawValue
+    }
+
+    // MARK: - UserDefaultElement
+
+    /// Alias to `readRawRepresentable(object:)`
+    ///
+    /// - Parameter object: `Any`
+    /// - Returns: `Self`
+    static func read(object: Any) throws -> Self {
+        return try readRawRepresentable(object: object)
+    }
+
+    /// Alias to `writeRawRepresentable()`
+    /// - Returns: `Any`
+    func write() throws -> Any {
+        return try writeRawRepresentable()
+    }
+}
+
+// MARK: - RawRepresentable + Codable
+
+/// Extension required to handle an entity which conforms to both:
+/// - `RawRepresentable`
+/// - `Codable`
+///
+/// Otherwise conforming to `UserDefaultElement` raises an error as Swift doesn't know which
+/// implementation to use.
+public extension UserDefaultElement
+    where Self: RawRepresentable, RawValue: SupportedUserDefaultElement, Self: Codable {
+
+    /// Alias to `readRawRepresentable(object:)`
+    ///
+    /// - Parameter object: `Any`
+    /// - Returns: `Self`
+    static func read(object: Any) throws -> Self {
+        return try readRawRepresentable(object: object)
+    }
+
+    /// Alias to `writeRawRepresentable()`
+    /// - Returns: `Any`
+    func write() throws -> Any {
+        return try writeRawRepresentable()
     }
 }
