@@ -67,11 +67,6 @@ extension Date: SupportedUserDefaultElement {}
 extension NSArray: SupportedUserDefaultElement {}
 extension Array: SupportedUserDefaultElement {}
 
-// NSSet
-// Warning: As with UserDefaults, make sure `Element` is valid
-extension NSSet: SupportedUserDefaultElement {}
-extension Set: SupportedUserDefaultElement {}
-
 // NSDictionary
 // Warning: As with UserDefaults, make sure `Key`, `Value` are valid
 extension NSDictionary: SupportedUserDefaultElement {}
